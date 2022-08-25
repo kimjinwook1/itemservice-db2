@@ -11,7 +11,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
@@ -46,8 +45,6 @@ class ItemRepositoryTest {
         위 두개의 어노테이션을 붙히면 롤백되지 않고 커밋이 실행된다.
     */
     @Test
-    @Transactional
-    @Commit
     void save() {
         //given
         Item item = new Item("itemA", 10000, 10);
